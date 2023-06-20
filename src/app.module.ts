@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { RolesModule } from './roles/roles.module';
+import { Rol } from './roles/rol.entity';
+
 
 
 
@@ -17,11 +20,11 @@ import { AuthModule } from './auth/auth.module';
     username: 'root',
     password: '',
     database: 'menutec_db',
-    entities: [User],
+    entities: [User, Rol],
     synchronize: true,
   }),
   
-  UsersModule, AuthModule,
+  UsersModule, AuthModule, RolesModule, 
 ],
   controllers: [AppController],
   providers: [AppService],
